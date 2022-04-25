@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House price prediction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+        * {
+            font-family: 'Nunito', sans-serif;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .main {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .main .nav {
+            color: white;
+            background: dodgerblue;
+            padding: .6rem;
+        }
+
+        .main .outer {
+            display: flex;
+            height: 70vh;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .main .outer form .group {
+            display: flex;
+            justify-content: space-between;
+        }
+        .main .outer form{
+            width: 40vw;
+        }
+        .main .outer form .center{
+            width: 50vw;
+            display: flex;
+            justify-content: center;
+        }
+        .main .outer form .center-btn{
+            display: flex;
+            justify-content: center;
+        }
+        .main .outer form .center-btn input[type="submit"]{
+            color: white;
+            background-color: dodgerblue;
+            padding: .5rem;
+            font-size: medium;
+            border-radius: 10px;
+            border: none;
+        }
+        .main .center{
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+        }
+        .main .center p{
+            background-color: dodgerblue;
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="main">
+        <div class="nav">
+            <h1>House Price </h1>
+        </div>
+        <div class="outer">
+            <form action="/predict" method="POST">
+               <center><h2>House Price Prediction</h2></center>
+                <div class="group group-1">
+                    <div class="inner">
+                        <label>
+                            LotArea
+                        </label>
+                        <br>
+                        <input type="text" name="lotArea" id="lotArea" required>
+                    </div>
+                    <div class="inner">
+                        <label>
+                            MasVnrArea
+                        </label><br>
+                        <input type="text" name="MasVnrArea" id="masvnrarea" required>
+                        <br>
+
+                    </div>
+                </div>
+                <div class="group group-2">
+                    <div class="inner">
+                        <label>BsmtUnfSF</label>
+                        <br>
+                        <input type="text" name="BsmtUnfSF" id="bsmtunfsf" required>
+
+                    </div>
+                    <div class="inner">
+                        <label>TotalBsmtSF</label>
+                        <br>
+                        <input type="text" name="TotalBsmtSF" id="Totalbsmtsf" required>
+                    </div>
+                </div>
+                <div class="group group-3">
+                    <div class="inner">
+                        <label>1stFlrSF</label>
+                        <br>
+                        <input type="text" name="1stFlrSF" id="1stFlrSF" required>
+                    </div>
+                    <div class="inner">
+                        <label>2ndFlrSF</label>
+                        <br>
+                        <input type="text" name="2ndFlrSF" id="2ndFlrSF" required>
+                    </div>
+
+                </div>
+                <div class="group group-4">
+                <div class="inner">
+                    <label>GrLivArea</label>
+                    <br>
+                    <input type="text" name="GrLivArea" id="GrLivArea" required>
+                </div>
+                <div class="inner">
+                    <label>GarageArea</label>
+                    <br>
+                    <input type="text" name="GarageArea" id="GarageArea" required>
+                </div>
+            </div><div class="group group-5">
+                <div class="inner">
+                    <label>WoodDeckSF</label>
+                    <br>
+                    <input type="text" name="WoodDeckSF" id="WoodDeckSF" required>
+                </div>
+                <div class="inner">
+                    <label>OpenPorchSF</label>
+                    <br>
+                    <input type="text" name="OpenPorchSF" id="OpenPorchSF" required>
+                </div>
+            </div>
+            <div class="center-btn">
+                <input type="submit" value="Predict">
+            
+        </div>
+      
+
+    </form>
+        </div>
+       <div class="center">
+            <p>THE EXPECTED PRICE IS {{z}}</p>
+    </div>
+    </section>
+</body>
+
+</html>
